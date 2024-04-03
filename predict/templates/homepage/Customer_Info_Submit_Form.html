@@ -1,0 +1,155 @@
+<!--
+ * @Date         : 2023-10-20 14:26:16
+ * @Author       : BDFD,bdfd2005@gmail.com
+ * @Github       : https://github.com/bdfd
+ * @LastEditTime : 2023-11-09 10:33:15
+ * @LastEditors  : BDFD
+ * @Description  : 
+ * @FilePath     : \predict\templates\homepage\Customer_Info_Submit_Form.html
+ * Copyright (c) 2023 by BDFD, All Rights Reserved. 
+-->
+<form action="#" method="post" id="myForm"
+    style="margin-top:0px;font-family:'Times New Roman',楷体;" onsubmit=" "
+    name="PredictionForm">
+    <div class="input-group">
+        <span
+            style="font-family:楷体;font-size:14px;margin-left:6px"><b>项目描述(选填):</b></span>
+        <div>
+            <input type=" text" class="form-control" name="mingzi"
+                value="{{mingzi}}"
+                style="height:25px;width:475px;font-size:14px;margin-left:10px;border-radius:5px">
+        </div>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>The Customer Senior Information:</b> </label><br>
+        <select class="selectpicker form-control" id="SeniorCitizen"
+            name="SeniorCitizen" required="1">
+            {% if SeniorCitizen %}
+            <option value="{{ SeniorCitizen }}">{{ SeniorCitizen }}</option>
+            {% endif %}
+            {% for SeniorCitizen in seniorcitizen_lists %}
+            <option value="{{ SeniorCitizen }}">{{ SeniorCitizen }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>The Customer Partner Information:</b> </label><br>
+        <select class="selectpicker form-control" id="Partner" name="Partner"
+            required="1">
+            {% if Partner %}
+            <option value="{{ Partner }}">{{ Partner }}</option>
+            {% endif %}
+            {% for Partner in partner_lists %}
+            <option value="{{ Partner }}">{{ Partner }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>The Customer Dependents Information:</b> </label><br>
+        <select class="selectpicker form-control" id="Dependents"
+            name="Dependents" required="1">
+            {% if Dependents%}
+            <option value="{{ Dependents }}">{{ Dependents }}</option>
+            {% endif %}
+            {% for Dependent in dependents_lists %}
+            <option value="{{ Dependent }}">{{ Dependent }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Tenure Length:</b> </label><br>
+        <input class="selectpicker form-control" id="tenure" name="tenure"
+            value="{{tenure}}" required="1">
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Online Security Status:</b> </label><br>
+        <select class="selectpicker form-control" id="OnlineSecurity"
+            name="OnlineSecurity" required="1">
+            {% if OnlineSecurity%}
+            <option value="{{ OnlineSecurity }}">{{ OnlineSecurity }}</option>
+            {% endif %}
+            {% for OnlineSecurity in onlinesecurity_lists %}
+            <option value="{{ OnlineSecurity }}">{{ OnlineSecurity }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Technical Support Status:</b> </label><br>
+        <select class="selectpicker form-control" id="TechSupport"
+            name="TechSupport" required="1">
+            {% if TechSupport%}
+            <option value="{{ TechSupport }}">{{ TechSupport }}</option>
+            {% endif %}
+            {% for TechSupport in techsupport_lists %}
+            <option value="{{ TechSupport }}">{{ TechSupport }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Contract Length Option:</b> </label><br>
+        <select class="selectpicker form-control" id="Contract" name="Contract"
+            required="1">
+            {% if Contract%}
+            <option value="{{ Contract }}">{{ Contract }}</option>
+            {% endif %}
+            {% for Contract in contract_lists %}
+            <option value="{{ Contract }}">{{ Contract }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Payment Recipt Option:</b> </label><br>
+        <select class="selectpicker form-control" id="PaperlessBilling"
+            name="PaperlessBilling" required="1">
+            {% if PaperlessBilling%}
+            <option value="{{ PaperlessBilling }}">{{ PaperlessBilling }}
+            </option>
+            {% endif %}
+            {% for PaperlessBilling in paperlessbilling_lists %}
+            <option value="{{ PaperlessBilling }}">{{ PaperlessBilling }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Payment Method Option:</b> </label><br>
+        <select class="selectpicker form-control" id="PaymentMethod"
+            name="PaymentMethod" required="1">
+            {% if PaymentMethod%}
+            <option value="{{ PaymentMethod }}">{{ PaymentMethod }}</option>
+            {% endif %}
+            {% for PaymentMethod in paymentmethod_lists %}
+            <option value="{{ PaymentMethod }}">{{ PaymentMethod }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br />
+    <div class="col-md-10 form-group" style="text-align: center">
+        <label><b>Bundle Monthly Price:</b> </label><br>
+        <input class="selectpicker form-control" id="MonthlyCharges"
+            value="{{MonthlyCharges}}" name="MonthlyCharges" required="1">
+    </div>
+    <br />
+    <h5 style="margin-bottom:15px;margin-top:15px;" align="right">
+        <button type=" submit" name="calculate" value="计 算"
+            class="btn btn-secondary"
+            style="font-family: 楷体;background-color: rgb(230, 230, 230);color:red;width:250px;height:28px;padding-top:0px;"><strong>计&nbsp算
+                (结果见下!)</strong></button>
+    </h5>
+</form>
+<!-- <div class="card" id="p3"> -->
+<div class="card-header pagebreak"
+    style="padding: 0rem;padding-top:0.5rem;padding-bottom:0.5rem;background-color:rgb(233, 236, 239) ;">
+    <h5 style="font-family: 楷体; margin-bottom: 0px;" align="left">
+        <strong>计算结果</strong>
+    </h5>
+</div>

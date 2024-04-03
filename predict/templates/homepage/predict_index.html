@@ -1,0 +1,33 @@
+<!--
+ * @Date         : 2022-12-05 14:13:08
+ * @Author       : BDFD,bdfd2005@gmail.com
+ * @Github       : https://github.com/bdfd
+ * @LastEditTime : 2023-11-07 11:48:44
+ * @LastEditors  : BDFD
+ * @Description  : 
+ * @FilePath     : \predict\templates\homepage\predict_index.html
+ * Copyright (c) 2022 by BDFD, All Rights Reserved. 
+-->
+
+{% extends "./layout/base.html" %}
+{% block title%}
+Customer Churn Chance Prediction
+{% endblock %}
+
+{% block content %}
+
+
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="./static/images/Customer_Churn.png"
+        alt="">
+    <h1 class="display-5 fw-bold text-body-emphasis">Customer Churn Chance
+        Prediction</h1>
+    <div class="col-lg-6 mx-auto">
+        <h1>Hello, Guys!!</h1>
+        <h2>Let's Do Some Prediction!!!</h2>
+        <br />
+        {% include "./homepage/Customer_Info_Submit_Form.html" %}
+        {% include "./homepage/Customer_Info_Result_Form.html" %}
+    </div>
+</div>
+{% endblock %}
